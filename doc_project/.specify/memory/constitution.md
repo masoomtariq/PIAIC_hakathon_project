@@ -1,14 +1,12 @@
 <!--
 Sync Impact Report:
-- Version change: 0.0.3 -> 0.1.0
+- Version change: 0.1.0 -> 0.2.0
 - List of modified principles:
-    - Embodied Intelligence: New Principle
-    - Sim-to-Real Safety: New Principle
-    - Audience Respect: New Principle
-    - Content Architecture: Updated (Accessibility for diagrams, Strict chapter structure)
-    - Code Quality: Updated (Strict Python, ROS 2 compatibility)
-    - Educational Standards: Updated (Assessment rubric, Hardware Clarity)
-- Added sections: Core Principles, Key Standards (Global), Constraints, Success Criteria (top-level)
+    - The Physical Shift: Content must frame "Physical AI" not as a feature, but as a paradigm shift from digital-only intelligence to embodied reality.
+    - Sim-to-Real Safety: "The Latency Trap" is a hard constraint. Code examples must explicitly separate Training (Cloud/Sim) from Inference (Edge/Jetson).
+    - Audience Respect: Assume proficiency in Python and Linux. Skip syntax basics; focus on domain application (ROS 2, Isaac Sim).
+- Added sections:
+    - Standards for "Preface: The Physical AI Paradigm"
 - Removed sections: N/A
 - Templates requiring updates:
     - .specify/templates/plan-template.md (⚠ pending)
@@ -17,40 +15,47 @@ Sync Impact Report:
     - .specify/templates/commands/*.md (⚠ pending)
 - Follow-up TODOs: N/A
 -->
-# Project Constitution: Physical AI & Humanoid Robotics - AI-Native Textbook (Docusaurus Edition)
+# Project Constitution: Physical AI & Humanoid Robotics - AI-Native Textbook
 
 ## Core Principles
 
-- **Embodied Intelligence:** Content must bridge the gap between digital algorithms and physical laws (gravity, friction).
-- **Sim-to-Real Safety:** "The Latency Trap" is a hard constraint. Real-time control loops MUST run on local Edge hardware (Jetson); Cloud instances are for training/simulation only.
+- **The Physical Shift:** Content must frame "Physical AI" not as a feature, but as a paradigm shift from digital-only intelligence to embodied reality.
+- **Sim-to-Real Safety:** "The Latency Trap" is a hard constraint. Code examples must explicitly separate Training (Cloud/Sim) from Inference (Edge/Jetson).
 - **Audience Respect:** Assume proficiency in Python and Linux. Skip syntax basics; focus on domain application (ROS 2, Isaac Sim).
 
 ## Key Standards (Global)
 
 ### Content Architecture
 
-- **Built with Docusaurus 3.9.2.**
-- **Structure:** Must strictly follow: Introduction, Ch1 (ROS 2), Ch2 (Digital Twin), Ch3 (Isaac), Ch4 (VLA).
-- **Accessibility:** All diagrams must be described in text for accessibility.
+- Built with Docusaurus 3.9.2.
+- **Mandatory Opening:** The book must start with "Preface: The Physical AI Paradigm" before Chapter 1.
+- Structure: Preface -> Ch1 (ROS 2) -> Ch2 (Digital Twin) -> Ch3 (Isaac) -> Ch4 (VLA).
+- Accessibility: All diagrams must be described in text for accessibility.
 
 ### Code Quality
 
-- **Language:** Strict Python (rclpy) focus. No C++ or mixed language blocks.
-- **Compatibility:** Code must be verifiable on Ubuntu 22.04 with ROS 2 Humble/Iron.
+- Language: Strict Python (rclpy) focus. No C++ or mixed language blocks.
+- Compatibility: Code must be verifiable on Ubuntu 22.04 with ROS 2 Humble/Iron.
 
 ### Educational Standards
 
-- **Assessment:** Every chapter must conclude with a 10-15 item "Technical Mastery Checklist" rubric.
-- **Hardware Clarity:** All exercises must explicitly label requirements (e.g., "Requires RTX 4070 Ti" vs "Runs on Jetson").
+- Assessment: Every chapter must conclude with a 10-15 item "Technical Mastery Checklist" rubric.
+- Hardware Clarity: All exercises must explicitly label requirements (e.g., "Requires RTX 4070 Ti" vs "Runs on Jetson").
+
+## Standards for "Preface: The Physical AI Paradigm"
+
+- The Core Premise: Must articulate the shift from "Digital AI" (Chatbots) to "Embodied Intelligence" (Robots that understand physics).
+- The Method: Define the "Sim-to-Real" workflow as the primary development loop (Digital Twin $	o$ Reality).
+- The Promise: Explain why Humanoid Robots are the target form factor (adapting to human-centered environments).
 
 ## Constraints
 
-- **Deployment:** Must deploy successfully to GitHub Pages.
+- Deployment: Must deploy successfully to GitHub Pages.
 
 ## Success Criteria
 
-- Book site builds locally and deploys to GitHub Pages without Docusaurus errors.
-- High confidence in control loop code safety for physical deployment (latency-aware), achieved through comprehensive testing, formal methods where applicable, and adherence to safety-critical software development best practices.
+- Preface successfully establishes the "Sim-to-Real" philosophy.
+- 100% of control loop code is verified safe for physical deployment (latency-aware).
 
 ## Book Vision and Structure
 
@@ -149,7 +154,7 @@ Each chapter will adhere to the following structure:
 The book will be built using Docusaurus 3.9.2. All content must conform to Docusaurus markdown specifications.
 - **File Structure:** Markdown files for chapters and sections should be organized logically within the Docusaurus `docs` directory.
 - **Frontmatter:** Each markdown file must include Docusaurus frontmatter (e.g., `sidebar_position`, `title`, `slug`) for proper navigation and indexing.
-- **Code Blocks:** Use fenced code blocks with language identifiers (e.g., ````python`, ````cpp`) for all code examples.
+- **Code Blocks:** Use fenced code blocks with language identifiers (e.g., `python`, `cpp`) for all code examples.
 - **Images and Assets:** All images and static assets should be placed in the Docusaurus `static` directory and referenced with relative paths.
 - **Admonitions:** Utilize Docusaurus admonitions (e.g., `:::note`, `:::tip`, `:::warning`) for important callouts.
 - **Accessibility:** All diagrams must be described in text for accessibility.
@@ -199,4 +204,4 @@ The book will be built using Docusaurus 3.9.2. All content must conform to Docus
 
 ## Governance
 
-**Version**: 0.1.0 | **Ratified**: 2025-11-29 | **Last Amended**: 2025-11-30
+**Version**: 0.2.0 | **Ratified**: 2025-11-29 | **Last Amended**: 2025-11-30
