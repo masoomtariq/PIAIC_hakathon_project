@@ -1,9 +1,15 @@
 <!--
 Sync Impact Report:
-- Version change: N/A (Initial detailed constitution)
-- List of modified principles: All principles are newly defined or substantially modified based on the book structure and requirements.
-- Added sections: Book Vision and Structure, Mandatory Chapter Format, Docusaurus Format Requirements, Writing Style Guidelines, Quality Assurance Checklist, Non-Negotiable Rules.
-- Removed sections: N/A (Template placeholders were replaced)
+- Version change: 0.0.3 -> 0.1.0
+- List of modified principles:
+    - Embodied Intelligence: New Principle
+    - Sim-to-Real Safety: New Principle
+    - Audience Respect: New Principle
+    - Content Architecture: Updated (Accessibility for diagrams, Strict chapter structure)
+    - Code Quality: Updated (Strict Python, ROS 2 compatibility)
+    - Educational Standards: Updated (Assessment rubric, Hardware Clarity)
+- Added sections: Core Principles, Key Standards (Global), Constraints, Success Criteria (top-level)
+- Removed sections: N/A
 - Templates requiring updates:
     - .specify/templates/plan-template.md (⚠ pending)
     - .specify/templates/spec-template.md (⚠ pending)
@@ -11,7 +17,40 @@ Sync Impact Report:
     - .specify/templates/commands/*.md (⚠ pending)
 - Follow-up TODOs: N/A
 -->
-# Project Constitution: Physical AI & Humanoid Robotics
+# Project Constitution: Physical AI & Humanoid Robotics - AI-Native Textbook (Docusaurus Edition)
+
+## Core Principles
+
+- **Embodied Intelligence:** Content must bridge the gap between digital algorithms and physical laws (gravity, friction).
+- **Sim-to-Real Safety:** "The Latency Trap" is a hard constraint. Real-time control loops MUST run on local Edge hardware (Jetson); Cloud instances are for training/simulation only.
+- **Audience Respect:** Assume proficiency in Python and Linux. Skip syntax basics; focus on domain application (ROS 2, Isaac Sim).
+
+## Key Standards (Global)
+
+### Content Architecture
+
+- **Built with Docusaurus 3.9.2.**
+- **Structure:** Must strictly follow: Introduction, Ch1 (ROS 2), Ch2 (Digital Twin), Ch3 (Isaac), Ch4 (VLA).
+- **Accessibility:** All diagrams must be described in text for accessibility.
+
+### Code Quality
+
+- **Language:** Strict Python (rclpy) focus. No C++ or mixed language blocks.
+- **Compatibility:** Code must be verifiable on Ubuntu 22.04 with ROS 2 Humble/Iron.
+
+### Educational Standards
+
+- **Assessment:** Every chapter must conclude with a 10-15 item "Technical Mastery Checklist" rubric.
+- **Hardware Clarity:** All exercises must explicitly label requirements (e.g., "Requires RTX 4070 Ti" vs "Runs on Jetson").
+
+## Constraints
+
+- **Deployment:** Must deploy successfully to GitHub Pages.
+
+## Success Criteria
+
+- Book site builds locally and deploys to GitHub Pages without Docusaurus errors.
+- High confidence in control loop code safety for physical deployment (latency-aware), achieved through comprehensive testing, formal methods where applicable, and adherence to safety-critical software development best practices.
 
 ## Book Vision and Structure
 
@@ -102,6 +141,8 @@ Each chapter will adhere to the following structure:
 - **Description:** A concise overview of the chapter's content.
 - **Learning Outcomes:** Bulleted list of measurable skills or knowledge students will gain.
 - **Sections:** A numbered list of topics covered within the chapter. Each section should have a clear, descriptive heading.
+- **Assessment:** Every chapter must conclude with a 10-15 item "Technical Mastery Checklist" rubric.
+- **Hardware Clarity:** All exercises must explicitly label requirements (e.g., "Requires RTX 4070 Ti" vs "Runs on Jetson").
 
 ## Docusaurus Format Requirements
 
@@ -111,6 +152,7 @@ The book will be built using Docusaurus 3.9.2. All content must conform to Docus
 - **Code Blocks:** Use fenced code blocks with language identifiers (e.g., ````python`, ````cpp`) for all code examples.
 - **Images and Assets:** All images and static assets should be placed in the Docusaurus `static` directory and referenced with relative paths.
 - **Admonitions:** Utilize Docusaurus admonitions (e.g., `:::note`, `:::tip`, `:::warning`) for important callouts.
+- **Accessibility:** All diagrams must be described in text for accessibility.
 
 ## Writing Style Guidelines
 
@@ -157,4 +199,4 @@ The book will be built using Docusaurus 3.9.2. All content must conform to Docus
 
 ## Governance
 
-**Version**: 0.0.3 | **Ratified**: 2025-11-29 | **Last Amended**: 2025-11-29
+**Version**: 0.1.0 | **Ratified**: 2025-11-29 | **Last Amended**: 2025-11-30
