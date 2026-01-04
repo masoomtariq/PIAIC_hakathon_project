@@ -76,11 +76,14 @@ Frontend runs on http://localhost:3000
 
 ## ✨ MVP Features
 
-1. **Task Management** - Create, edit, delete, and complete tasks
-2. **Calendar View** - Visualize tasks on a calendar with multiple views
-3. **Progress Tracking** - Daily and weekly progress visualization
-4. **Categories** - Organize tasks by subject/course
-5. **Authentication** - User accounts with JWT-based auth
+1. **User Authentication** - Sign up, login, logout with JWT tokens ✅
+2. **Task Management** - Create, edit, delete, and complete tasks ✅
+3. **Task Dashboard** - View all tasks with progress statistics ✅
+4. **User Profile** - Account management and logout ✅
+5. **Calendar View** - Visualize tasks on a calendar (In Progress)
+6. **Progress Tracking** - Daily and weekly progress visualization (In Progress)
+7. **Categories** - Organize tasks by subject/course (Coming Soon)
+8. **Authentication** - User accounts with JWT-based auth ✅
 
 ## 🔄 Development Workflow
 
@@ -120,11 +123,11 @@ This project follows **Spec-Driven Development (SDD)**:
 
 ## 📅 Development Timeline (MVP)
 
-| Phase | Duration | Goals |
-|-------|----------|-------|
-| **Phase 1: Foundation** | Days 1-2 | Backend scaffolding, auth, DB schema |
-| **Phase 2: Core Features** | Days 3-6 | Task CRUD, calendar, progress tracking, categories |
-| **Phase 3: Deploy & Polish** | Days 7-10 | Responsive design, bug fixes, deployment, demo |
+| Phase | Duration | Status | Goals |
+|-------|----------|--------|-------|
+| **Phase 1: Foundation** | Days 1-2 | ✅ Complete | Backend scaffolding, auth, DB schema |
+| **Phase 2: Core Features** | Days 3-6 | 🔄 In Progress | Task CRUD ✅, calendar 🔄, progress 🔄, categories ⏳ |
+| **Phase 3: Deploy & Polish** | Days 7-10 | ⏳ Pending | Responsive design, bug fixes, deployment, demo |
 
 ## ✅ Quality Gates
 
