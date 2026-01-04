@@ -28,6 +28,7 @@ export const signup = async (req: AuthRequest, res: Response): Promise<void> => 
     const token = generateToken(user._id.toString(), user.email);
     const userObject = user.toObject();
     delete userObject.passwordHash;
+    delete userObject.__v;
     res.status(201).json({ token, user: userObject });
   } catch (error) {
     logger.error('Signup error:', error);
@@ -60,6 +61,7 @@ export const login = async (req: AuthRequest, res: Response): Promise<void> => {
     const token = generateToken(user._id.toString(), user.email);
     const userObject = user.toObject();
     delete userObject.passwordHash;
+    delete userObject.__v;
     res.json({ token, user: userObject });
   } catch (error) {
     logger.error('Login error:', error);
@@ -82,6 +84,7 @@ export const getCurrentUser = async (req: AuthRequest, res: Response): Promise<v
 
     const userObject = user.toObject();
     delete userObject.passwordHash;
+    delete userObject.__v;
     res.json({ user: userObject });
   } catch (error) {
     logger.error('Get current user error:', error);
