@@ -41,8 +41,15 @@ const authSlice = createSlice({
       state.error = null;
       localStorage.removeItem('token');
     },
+    clearAuth: (state) => {
+      state.isAuthenticated = false;
+      state.user = null;
+      state.token = null;
+      state.error = null;
+      localStorage.removeItem('token');
+    },
   },
 });
 
-export const { setLoading, setError, setAuth, logout } = authSlice.actions;
+export const { setLoading, setError, setAuth, logout, clearAuth } = authSlice.actions;
 export default authSlice.reducer;

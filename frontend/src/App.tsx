@@ -7,6 +7,7 @@ import { useAppDispatch, useAppSelector } from './hooks/redux';
 import { setAuth } from './store/authSlice';
 import { authAPI } from './api/client';
 import { LoginPage } from './pages/LoginPage';
+import { DashboardPage } from './pages/DashboardPage';
 import { ProtectedRoute } from './components/ProtectedRoute';
 import './styles/index.css';
 
@@ -37,10 +38,7 @@ const AppContent: React.FC = () => {
           path="/dashboard"
           element={
             <ProtectedRoute>
-              <div className="p-8">
-                <h1 className="text-3xl font-bold">Dashboard</h1>
-                <p className="text-gray-600 mt-2">Coming soon...</p>
-              </div>
+              <DashboardPage />
             </ProtectedRoute>
           }
         />
