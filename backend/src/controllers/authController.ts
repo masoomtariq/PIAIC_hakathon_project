@@ -26,7 +26,9 @@ export const signup = async (req: AuthRequest, res: Response): Promise<void> => 
     await user.save();
 
     const token = generateToken(user._id.toString(), user.email);
-    res.status(201).json({ token, user });
+    const userObject = user.toObject();
+    delete userObject.passwordHash;
+    res.status(201).json({ token, user: userObject });
   } catch (error) {
     logger.error('Signup error:', error);
     res.status(500).json({ error: 'Internal server error' });
@@ -56,7 +58,9 @@ export const login = async (req: AuthRequest, res: Response): Promise<void> => {
     }
 
     const token = generateToken(user._id.toString(), user.email);
-    res.json({ token, user });
+    const userObject = user.toObject();
+    delete userObject.passwordHash;
+    res.json({ token, user: userObject });
   } catch (error) {
     logger.error('Login error:', error);
     res.status(500).json({ error: 'Internal server error' });
@@ -76,7 +80,9 @@ export const getCurrentUser = async (req: AuthRequest, res: Response): Promise<v
       return;
     }
 
-    res.json({ user });
+    const userObject = user.toObject();
+    delete userObject.passwordHash;
+    res.json({ user: userObject });
   } catch (error) {
     logger.error('Get current user error:', error);
     res.status(500).json({ error: 'Internal server error' });
