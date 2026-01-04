@@ -1,55 +1,134 @@
-# [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+# StudyFlow Constitution: Student Todo App
+
+## Project Identity
+- **Name**: StudyFlow (Student Todo App)
+- **Type**: Hackathon Project (PIAIC)
+- **Repository**: masoomtariq/PIAIC_hakathon_project
+- **License**: Apache 2.0
+- **Timeline**: 10-day sprint (Hackathon)
+- **Team Size**: 1-3 developers
+
+## Vision
+A lightweight, intuitive student productivity app that helps students organize tasks, track progress, and maintain focus—with clean UX and productivity features that differentiate it from generic todo-apps.
 
 ## Core Principles
 
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+### I. Specification-First Development
+Every feature begins with a formal specification document including user stories, acceptance criteria, technical requirements, and API contracts before any code is written.
 
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+### II. Rapid MVP Iteration
+Focus ruthlessly on 5 core MVP features; defer advanced integrations (LMS, gamification, advanced analytics) to Phase 2. Ship fast and iterate based on user feedback.
 
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+### III. User-Centric Design
+Prioritize intuitive UX, fast load times (<2s), and accessibility for all ages. Clean interface; minimize cognitive load; keyboard + mouse + touch support.
 
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+### IV. Type-Safe & Tested Code
+TypeScript in strict mode for both frontend and backend. Aim for >70% test coverage on utilities and API endpoints. All changes verified before merge to main.
 
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
+### V. Spec-Driven Documentation
+Every decision documented: Prompt History Records (PHR) for user interactions, Architectural Decision Records (ADR) for system choices. Code review references specs.
 
-### [PRINCIPLE_6_NAME]
+## MVP Scope (5 Core Features)
 
+1. **Task Management (CRUD)**: Create, read, update, delete tasks with title, description, due date, priority, category
+2. **Calendar View**: Visual calendar with day/week/month views, drag-and-drop rescheduling, color-coded by category
+3. **Progress Tracking**: Daily progress bar, today's task list, weekly completion chart
+4. **Categories & Filtering**: Organize by subject/course; filter by priority, category, due date, completion
+5. **User Auth & Persistence**: Email/password auth, JWT sessions, cloud task sync per user
 
-[PRINCIPLE__DESCRIPTION]
+**Estimated Effort**: 10-11 developer-days (achievable in 1-2 weeks with 2-3 developers)
 
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
+## Deferred Features (Phase 2+)
+- LMS integration (Google Classroom, Canvas auto-sync)
+- Grade/GPA tracking and exam countdowns
+- Pomodoro timer and focus sessions
+- Gamification (streaks, badges, rewards)
+- Real-time collaboration
+- Advanced reminders and recurrence
+- Detailed analytics and reports
+- Offline-first PWA with background sync
 
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
+## Tech Stack
 
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
+### Frontend
+- **Framework**: React 18 + TypeScript (strict mode)
+- **Styling**: Tailwind CSS
+- **UI Components**: Headless UI / Radix UI
+- **Calendar**: React Big Calendar
+- **Charts**: Recharts
+- **State**: Redux Toolkit
+- **Build**: Vite
+- **Package Manager**: npm
 
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
+### Backend
+- **Runtime**: Node.js
+- **Framework**: Express.js + TypeScript
+- **Database**: MongoDB (Atlas free tier)
+- **Auth**: JWT + bcrypt
+- **Validation**: Joi
+- **Testing**: Jest
+- **API Docs**: Swagger/OpenAPI
+
+### DevOps
+- **VCS**: Git/GitHub
+- **CI/CD**: GitHub Actions (lint, test on PR)
+- **Hosting**: Render.com or Railway (free tier)
+- **DB Hosting**: MongoDB Atlas (free tier)
+
+## Development Workflow
+
+### Phase 1: Foundation (Days 1-2)
+- Project setup (frontend + backend repo structure)
+- Database schema (Users, Tasks, Categories)
+- Auth endpoints (signup, login, token verify)
+- Basic task CRUD API
+
+### Phase 2: Core Features (Days 3-6)
+- Task filtering and category endpoints
+- Frontend: Task dashboard, task form, calendar view
+- Frontend: Progress bar and stats display
+- Database: Progress tracking queries
+
+### Phase 3: Polish & Deploy (Days 7-10)
+- Responsive design (mobile/tablet/desktop)
+- Error handling and user feedback
+- Performance optimization
+- Deploy to production
+- Documentation and demo
+
+## Quality Gates (Before Launch)
+- ✅ All MVP features functional and tested
+- ✅ Backend API fully documented (Swagger)
+- ✅ Frontend responsive on all devices
+- ✅ No console errors; accessibility basics met
+- ✅ TypeScript strict mode; ESLint compliance
+- ✅ README with setup and demo instructions
+- ✅ Load time <2s; task creation <10s
+
+## Key Constraints & Decisions
+
+1. **No LMS in MVP**: Deferred to Phase 2; focus on core UX for hackathon
+2. **MongoDB Chosen**: Flexible schema iteration faster than PostgreSQL for hackathon pace
+3. **Single Frontend Repo**: Simpler deployment; monorepo considered for Phase 2
+4. **Offline Support Phase 2**: PWA service workers added post-launch
+5. **YAGNI Principle**: Build only what's required for MVP; no premature optimization
+
+## Monetization
+- **Phase 1**: Free-to-use, no monetization
+- **Phase 2**: Consider freemium model if pursuing as product (Premium: advanced analytics, integrations, priority support)
+
+## Success Metrics
+- App deployed and demoed within hackathon timeline
+- All MVP features working without critical bugs
+- Clean, maintainable, well-documented codebase
+- Users can onboard and create tasks in <2 minutes
+- Positive feedback from demo evaluators
 
 ## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
+This constitution supersedes all other practices. Amendments require documentation in an ADR, stakeholder approval, and a migration plan before implementation.
 
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
+---
 
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
+**Document Version**: 1.0  
+**Created**: 2026-01-04  
+**Status**: Active
